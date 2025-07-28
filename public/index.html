@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>ChatZoom | Home</title>
+  <!-- Tailwind CSS for styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- SweetAlert for user-friendly alerts -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body class="bg-white text-gray-800">
+
+  <!-- 🔝 Navbar -->
+  <nav class="bg-green-600 text-white px-6 py-4 flex justify-between items-center shadow-md">
+    <a href="/index.html" class="text-2xl font-bold">ChatZoom</a>
+    <ul class="flex space-x-6 text-sm font-medium">
+      <li><a href="#" class="hover:text-green-200">Home</a></li>
+      <li><a href="#features" class="hover:text-green-200">Features</a></li>
+      <li><a href="#about" class="hover:text-green-200">About</a></li>
+      <li><a href="#contact" class="hover:text-green-200">Contact</a></li>
+      <li><a href="/login.html" class="hover:text-green-200">Login</a></li>
+      <li><a href="/register.html" class="hover:text-green-200">Register</a></li>
+    </ul>
+  </nav>
+
+  <!-- 🦸 Hero Section -->
+  <section class="bg-green-100 py-20 text-center px-4">
+    <h1 class="text-5xl font-bold text-green-800 mb-4">Real-Time Chat Made Easy</h1>
+    <p class="text-lg text-green-700 mb-6">Create rooms, invite friends, and talk instantly.</p>
+    <a href="/login.html" class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition">Get
+      Started</a>
+  </section>
+
+  <!-- 🚀 Features Section -->
+  <section id="features" class="py-16 px-8 text-center bg-white">
+    <h2 class="text-3xl font-semibold mb-8">Why ChatZoom?</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-left max-w-6xl mx-auto">
+      <div class="p-6 border rounded shadow">
+        <h3 class="text-xl font-bold mb-2">Fast & Secure</h3>
+        <p>Token-based login with end-to-end Socket communication.</p>
+      </div>
+      <div class="p-6 border rounded shadow">
+        <h3 class="text-xl font-bold mb-2">Real-Time Chat</h3>
+        <p>Send, receive & type instantly. No refresh needed.</p>
+      </div>
+      <div class="p-6 border rounded shadow">
+        <h3 class="text-xl font-bold mb-2">Room Support</h3>
+        <p>Create or join chat rooms with one-click invites.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📘 About Section -->
+  <section id="about" class="py-16 px-8 bg-gray-50 text-center">
+    <h2 class="text-3xl font-semibold mb-6">About ChatZoom</h2>
+    <p class="max-w-3xl mx-auto text-gray-600">
+      ChatZoom is a simple, powerful chat platform built on modern tech like MongoDB, Express, Node.js, and Socket.IO.
+      It's tailored for learners and professionals who want real-time messaging with ease.
+    </p>
+  </section>
+
+  <!-- 🌟 Testimonials / FAQ Section -->
+  <section class="py-16 px-8 text-center bg-white">
+    <h2 class="text-3xl font-semibold mb-6">What Users Say</h2>
+    <div class="max-w-4xl mx-auto grid gap-6 md:grid-cols-2 text-left">
+      <div class="border p-4 rounded shadow">
+        <p>"Super simple and fast. Love the real-time typing!"</p>
+        <p class="text-sm text-gray-500 mt-2">- Aman, Developer</p>
+      </div>
+      <div class="border p-4 rounded shadow">
+        <p>"Best app to teach students WebSocket-based chat."</p>
+        <p class="text-sm text-gray-500 mt-2">- Priya, Instructor</p>
+      </div>
+    </div>
+
+    <!-- 💡 Additional About Section -->
+    <section class="py-16 px-8 bg-gray-50 text-center mt-12">
+      <h2 class="text-3xl font-semibold mb-6">Built with Developers in Mind</h2>
+      <p class="max-w-3xl mx-auto text-gray-600">
+        ChatZoom is a MERN-based chat application built with modern technologies like Socket.IO, JWT, MongoDB, and
+        TailwindCSS.
+        It is designed for easy use and scalability with real-world features.
+      </p>
+    </section>
+
+    <!-- ❓ FAQ -->
+    <h3 class="text-2xl font-semibold mt-12 mb-4">FAQs</h3>
+    <div class="max-w-2xl mx-auto text-left space-y-4">
+      <div>
+        <strong>Is ChatZoom free to use?</strong>
+        <p>Yes, it's completely free for all users.</p>
+      </div>
+      <div>
+        <strong>Can I invite friends to private rooms?</strong>
+        <p>Yes, just select a user and send an invite in the chat panel.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📩 Contact Us Section -->
+  <section id="contact" class="py-16 px-8 bg-gray-100 text-center">
+    <h2 class="text-3xl font-semibold mb-6">Contact Us</h2>
+    <form class="max-w-xl mx-auto space-y-4" id="contactForm">
+      <input type="text" name="name" placeholder="Your Name" required class="w-full p-2 border rounded" />
+      <input type="email" name="email" placeholder="Your Email" required class="w-full p-2 border rounded" />
+      <textarea name="message" rows="4" placeholder="Your Message" required
+        class="w-full p-2 border rounded"></textarea>
+      <button type="submit"
+        class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition">Send</button>
+    </form>
+  </section>
+
+  <!-- ⚓ Footer -->
+  <footer class="bg-green-600 text-white text-center p-4">
+    <p>&copy; 2025 ChatZoom. All rights reserved.</p>
+  </footer>
+
+</body>
+
+</html>
+
+<script>
+  document.getElementById("contactForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    if (res.ok) {
+      Swal.fire("Sent!", "We’ve received your message.", "success");
+      e.target.reset();
+    } else {
+      Swal.fire("Oops!", "Something went wrong.", "error");
+    }
+  });
+</script>

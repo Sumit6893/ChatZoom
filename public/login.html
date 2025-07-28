@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Login | ChatZoom</title>
+
+  <!-- Tailwind CSS for utility-first styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- SweetAlert for user-friendly alerts -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+  <!-- 🔝 Navbar with Logo -->
+  <nav class="bg-white shadow px-6 py-4">
+    <a href="/index.html" class="text-2xl font-bold text-green-600">ChatZoom</a>
+  </nav>
+
+  <!-- 🎯 Centered Login Form -->
+  <div class="flex-grow flex justify-center items-center">
+    <form id="loginForm" class="bg-white p-8 rounded shadow-md w-96 space-y-4">
+      <h2 class="text-2xl font-semibold text-center text-green-600">Login</h2>
+
+      <input required type="email" placeholder="Email" id="email" class="w-full p-2 border rounded" />
+
+      <input required type="password" placeholder="Password" id="password" class="w-full p-2 border rounded" />
+
+      <button type="submit" class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition">
+        Login
+      </button>
+
+      <p class="text-sm text-center">
+        Don't have an account?
+        <a href="/register.html" class="text-blue-600">Register</a>
+      </p>
+      <div class="text-center mt-4">
+        <a href="/auth/github"
+          class="inline-block bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition">
+          Login with GitHub
+        </a>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- ✅ Login Logic with SweetAlert -->
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      try {
+        const res = await fetch("/api/user/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password })
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          // Store token and name in localStorage
+          localStorage.setItem("token", data.token);
+          localStorage.setItem("name", data.name);
+
+          // Show success alert
+          Swal.fire({
+            icon: 'success',
+            title: 'Login Successful!',
+            showConfirmButton: false,
+            timer: 1500
+          }).then(() => {
+            window.location.href = "/dashboard.html"; // Redirect to dashboard
+          });
+
+        } else {
+          // If backend sends string instead of object
+          const message = typeof data === "string" ? data : data.message || "Invalid credentials";
+
+          Swal.fire({
+            icon: 'error',
+            title: 'Login Failed',
+            text: message
+          });
+        }
+      } catch (err) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Server Error',
+          text: 'Unable to connect. Please try again later.'
+        });
+      }
+    });
+  </script>
+
+</body>
+
+</html>
