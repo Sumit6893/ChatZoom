@@ -8,7 +8,7 @@ passport.use(
     {
       clientID: process.env.clientID,
       clientSecret: process.env.clientSecret,
-      callbackURL: "https://chatzoom-6l06.onrender.com",
+      callbackURL: "https://chatzoom-6l06.onrender.com/auth/github/callback",
     },
     async (accessToken, refreshToken, profile, done) => {
       //   console.log("Access Token:", accessToken);
