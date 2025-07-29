@@ -125,5 +125,5 @@ io.on("connection", (socket) => {
 
 // 🚀 Start the Server
 server.listen(process.env.port, () => {
-  console.log("🚀 Server running at https://chatzoom-6l06.onrender.com");
+  console.log("https://chatzoom-6l06.onrender.com");
 });
