@@ -161,12 +161,28 @@ ChatZoomApp/
 
 ---
 
-## 👨‍💻 Developed By
+## 👨‍💻 Developed in a team
 
 **Sumit Kumar Das**
+**Ankesh Gupta**
+**Anil Kumar**
 Full Stack developer | MERN Stack developer
 
-Built with ❤️ to master real-time and fullstack apps.
+Built with ❤️ as a collaborative project to gain expertise in real-time and full-stack development using the MERN stack.
 
 ---
+
+## In this project, I worked as the team leader and full-stack developer.
+
+My main responsibilities included:
+
+Designing the overall architecture of the application — including frontend-backend flow, authentication strategy, and socket communication.
+I implemented the backend logic using Node.js and Express — especially the JWT-based authentication, GitHub OAuth login, and Socket.IO for real-time messaging.
+I also built the contact form functionality using Nodemailer to send emails directly from the app.
+On the frontend, I contributed to setting up responsive UI using HTML, TailwindCSS, and SweetAlert2 for user prompts.
+
+As a team leader, I:
+Divided the work among team members based on strengths.
+Managed the GitHub repository, performed code reviews, and resolved merge conflicts.
+Conducted regular syncs to track progress, debug blockers, and maintain project deadlines.
 
