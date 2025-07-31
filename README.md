@@ -164,9 +164,9 @@ ChatZoomApp/
 ## 👨‍💻 Developed By
 
 **Sumit Kumar Das**
-Full Stack Trainer | MERN Stack Mentor
+Full Stack developer | MERN Stack developer
 
-Built with ❤️ to help students master real-time and fullstack apps.
+Built with ❤️ to master real-time and fullstack apps.
 
 ---
 
